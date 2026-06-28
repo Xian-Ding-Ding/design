@@ -36,7 +36,8 @@ const projects = [
   {
     eyebrow: 'AI for Chemistry',
     title: '机器学习辅助催化剂设计与性质预测',
-    description: '结合材料描述符、计算化学数据与预测模型，探索催化剂结构、性能与反应表现之间的映射。',
+    description:
+      '结合实验数据、材料描述符与计算化学数据构建预测模型，探索催化剂结构、性能与反应表现之间的映射，实现催化剂的正向预测与逆向设计。',
     tags: ['Machine Learning', 'Catalyst Design', 'Property Prediction'],
     image: '/media/project-catalyst-custom.png',
     alt: '机器学习辅助催化剂性质预测模型流程图',
@@ -45,7 +46,8 @@ const projects = [
   {
     eyebrow: 'Teaching',
     title: '化工核心课程与专业软件教学视频',
-    description: '面向物理化学、化工热力学及 Aspen、VASP、Gaussian 等工具，沉淀可复用的学习内容。',
+    description:
+      '面向物理化学、化工热力学、反应工程等化工专业核心课，及化工+模拟相关软件如Aspen、VASP、Gaussian等，录制系列教学视频。',
     tags: ['Bilibili', 'Course Notes', 'Software Tutorials'],
     images: ['/media/project-teaching-orbitals.png', '/media/project-teaching-structures.png'],
     alt: '化工课程与计算化学软件图示',
@@ -194,7 +196,7 @@ function Profile() {
           <p className="section-label">Profile</p>
           <h2>化工背景、计算建模与教学表达之间的交叉型研究者</h2>
           <p className="lead">
-            我目前为化学工程与技术专业博士一年级学生，关注如何把化工核心理论、计算模拟与机器学习方法结合起来，用于复杂反应体系理解、催化剂设计和性质预测。曾获得第七届全国化工实验大赛全国特等奖，并持续将课程学习、专业软件使用经验和研究方法整理成教学内容。
+            我目前为化学工程与技术专业博士一年级学生，关注如何把化工核心理论、计算模拟与机器学习方法结合起来，用于复杂反应体系理解、催化剂设计和性质预测。曾获得第七届全国化工实验大赛全国特等奖，并持续将课程学习、专业软件使用经验和相关研究方法整理与大家一同分享交流。
           </p>
           <div className="contact-row">
             <span>
@@ -228,7 +230,7 @@ function Projects() {
         <div className="section-heading">
           <div>
             <p className="section-label">Selected Projects</p>
-            <h2>精选项目与内容方向</h2>
+            <h2>研究项目与方向</h2>
           </div>
           <p>
             当前先以研究主题和教学内容作为项目入口，后续可替换为论文图、模拟结果、课程封面或软件教学截图。
@@ -250,7 +252,7 @@ function Projects() {
                 )}
               </div>
               <div className="project-content">
-                <span>{project.eyebrow}</span>
+                <span className="project-eyebrow">{project.eyebrow}</span>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div className="tag-row">
