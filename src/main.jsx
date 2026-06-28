@@ -29,8 +29,8 @@ const projects = [
     title: '介观动力学建模与反应过程理解',
     description: '围绕复杂反应体系的多尺度行为，建立从物理化学机制到可解释动力学模型的研究叙事。',
     tags: ['Mesoscale Modeling', 'Reaction Engineering', 'Transport'],
-    image: '/media/project-mesoscale.svg',
-    alt: '介观动力学建模的抽象网络图',
+    image: '/media/project-mesoscale-custom.png',
+    alt: 'HDPA功能化催化剂介观动力学建模示意图',
     tone: 'project-cyan',
   },
   {
@@ -38,8 +38,8 @@ const projects = [
     title: '机器学习辅助催化剂设计与性质预测',
     description: '结合材料描述符、计算化学数据与预测模型，探索催化剂结构、性能与反应表现之间的映射。',
     tags: ['Machine Learning', 'Catalyst Design', 'Property Prediction'],
-    image: '/media/project-catalyst.svg',
-    alt: '机器学习辅助催化剂设计的结构图',
+    image: '/media/project-catalyst-custom.png',
+    alt: '机器学习辅助催化剂性质预测模型流程图',
     tone: 'project-lime',
   },
   {
@@ -47,8 +47,8 @@ const projects = [
     title: '化工核心课程与专业软件教学视频',
     description: '面向物理化学、化工热力学及 Aspen、VASP、Gaussian 等工具，沉淀可复用的学习内容。',
     tags: ['Bilibili', 'Course Notes', 'Software Tutorials'],
-    image: '/media/project-teaching.svg',
-    alt: '化工软件教学视频界面示意',
+    images: ['/media/project-teaching-orbitals.png', '/media/project-teaching-structures.png'],
+    alt: '化工课程与计算化学软件图示',
     tone: 'project-silver',
   },
 ];
@@ -87,17 +87,46 @@ const software = [
   'VESTA',
   'JADE',
   'Avantage',
+  'COMSOL',
+  'Matlab',
+  'Pycharm',
 ];
 
 function App() {
   return (
-    <main>
-      <Hero />
-      <Profile />
-      <Projects />
-      <Strengths />
-      <Contact />
-    </main>
+    <>
+      <SiteNav />
+      <main>
+        <Hero />
+        <Profile />
+        <Projects />
+        <Strengths />
+        <Contact />
+      </main>
+    </>
+  );
+}
+
+function SiteNav() {
+  return (
+    <nav className="site-nav" aria-label="主导航">
+      <a className="brand" href="#home">
+        <span className="brand-mark">
+          <Atom size={20} strokeWidth={1.8} />
+        </span>
+        <span>CHEM</span>
+      </a>
+      <div className="nav-links">
+        <a href="#profile">简介</a>
+        <a href="#projects">项目</a>
+        <a href="#strengths">优势</a>
+        <a href="#contact">联系</a>
+      </div>
+      <a className="nav-contact" href="mailto:1455039056@qq.com">
+        <Mail size={17} />
+        联系我
+      </a>
+    </nav>
   );
 }
 
@@ -114,25 +143,6 @@ function Hero() {
         poster="/media/hero-poster.svg"
       />
       <div className="hero-overlay" />
-      <nav className="site-nav" aria-label="主导航">
-        <a className="brand" href="#home">
-          <span className="brand-mark">
-            <Atom size={20} strokeWidth={1.8} />
-          </span>
-          <span>CHEMENG</span>
-        </a>
-        <div className="nav-links">
-          <a href="#profile">简介</a>
-          <a href="#projects">项目</a>
-          <a href="#strengths">优势</a>
-          <a href="#contact">联系</a>
-        </div>
-        <a className="nav-contact" href="mailto:your.email@example.com">
-          <Mail size={17} />
-          联系我
-        </a>
-      </nav>
-
       <div className="hero-inner">
         <div className="hero-copy">
           <div className="hero-kicker">
@@ -189,7 +199,7 @@ function Profile() {
           <div className="contact-row">
             <span>
               <Mail size={17} />
-              your.email@example.com
+              1455039056@qq.com
             </span>
             <span>
               <MapPin size={17} />
@@ -229,7 +239,15 @@ function Projects() {
           {projects.map((project) => (
             <article className={`project-card ${project.tone}`} key={project.title}>
               <div className="project-visual">
-                <img src={project.image} alt={project.alt} />
+                {project.images ? (
+                  <div className="project-image-pair" aria-label={project.alt}>
+                    {project.images.map((image) => (
+                      <img src={image} alt="" key={image} />
+                    ))}
+                  </div>
+                ) : (
+                  <img src={project.image} alt={project.alt} />
+                )}
               </div>
               <div className="project-content">
                 <span>{project.eyebrow}</span>
@@ -287,12 +305,28 @@ function Contact() {
         <p className="section-label">Contact</p>
         <h2>欢迎交流化工建模、催化剂设计、课程学习与专业软件教学</h2>
         <p>
-          这里后续可以接入你的邮箱、B 站主页、GitHub、Google Scholar、个人简历下载，以及视频课程入口。
+          可通过邮箱或 GitHub 联系我。后续这里还可以继续接入 B 站主页、Google Scholar、个人简历下载，以及视频课程入口。
         </p>
         <div className="contact-actions">
-          <a className="primary-btn dark" href="mailto:your.email@example.com">
+          <a className="primary-btn dark" href="mailto:1455039056@qq.com">
             <Mail size={18} />
             发送邮件
+          </a>
+          <a
+            className="ghost-btn light"
+            href="https://github.com/Xian-Ding-Ding"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <svg className="github-icon" viewBox="0 0 98 96" aria-hidden="true">
+              <path
+                fill="currentColor"
+                fillRule="evenodd"
+                d="M48.9 0C21.9 0 0 21.9 0 48.9c0 21.6 14 39.9 33.4 46.4 2.4.4 3.3-1.1 3.3-2.4 0-1.2 0-4.2-.1-8.3-13.6 3-16.5-6.5-16.5-6.5-2.2-5.6-5.4-7.1-5.4-7.1-4.4-3 .3-2.9.3-2.9 4.9.3 7.4 5 7.4 5 4.3 7.4 11.3 5.3 14 4 .4-3.1 1.7-5.3 3.1-6.5-10.8-1.2-22.2-5.4-22.2-24.2 0-5.3 1.9-9.7 5-13.1-.5-1.2-2.2-6.2.5-12.9 0 0 4.1-1.3 13.4 5 3.9-1.1 8.1-1.6 12.3-1.6s8.4.6 12.3 1.6c9.3-6.3 13.4-5 13.4-5 2.7 6.7 1 11.7.5 12.9 3.1 3.4 5 7.8 5 13.1 0 18.8-11.4 23-22.3 24.2 1.8 1.5 3.3 4.5 3.3 9.1 0 6.5-.1 11.8-.1 13.4 0 1.3.9 2.8 3.4 2.4C84 88.8 98 70.5 98 48.9 97.8 21.9 75.9 0 48.9 0Z"
+                clipRule="evenodd"
+              />
+            </svg>
+            GitHub
           </a>
           <a className="ghost-btn light" href="#home">
             回到首页
