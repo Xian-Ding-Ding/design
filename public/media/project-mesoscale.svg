@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-label="Mesoscale dynamics modeling visual">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dcf7f4"/>
+      <stop offset=".58" stop-color="#f6fbfa"/>
+      <stop offset="1" stop-color="#dbe9ee"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#143b40" flood-opacity=".16"/>
+    </filter>
+  </defs>
+  <rect width="900" height="560" fill="url(#bg)"/>
+  <g opacity=".28" stroke="#6e8b90" stroke-width="1">
+    <path d="M0 90h900M0 170h900M0 250h900M0 330h900M0 410h900M0 490h900"/>
+    <path d="M80 0v560M180 0v560M280 0v560M380 0v560M480 0v560M580 0v560M680 0v560M780 0v560"/>
+  </g>
+  <g fill="none" stroke="#16343a" stroke-width="2" opacity=".72">
+    <path d="M90 356c150-118 264-126 416-36s252 98 334-44"/>
+    <path d="M110 238c134-80 260-78 378 8s224 112 322 18"/>
+    <path d="M158 428c88-158 222-242 400-252 96-6 166 12 236 58"/>
+  </g>
+  <g filter="url(#shadow)">
+    <circle cx="185" cy="270" r="28" fill="#111b20"/>
+    <circle cx="363" cy="214" r="18" fill="#2bb8b2"/>
+    <circle cx="526" cy="318" r="35" fill="#ffffff"/>
+    <circle cx="526" cy="318" r="13" fill="#111b20"/>
+    <circle cx="694" cy="286" r="22" fill="#8abf55"/>
+  </g>
+  <g fill="#10252a" opacity=".82" font-family="Inter, Arial, sans-serif" font-weight="700">
+    <text x="126" y="78" font-size="22">MESOSCALE DYNAMICS</text>
+    <text x="126" y="112" font-size="13" opacity=".62">kinetics · transport · mechanism</text>
+  </g>
+</svg>

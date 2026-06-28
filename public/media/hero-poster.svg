@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Abstract laboratory background">
+  <rect width="1600" height="900" fill="#eef5f2"/>
+  <path d="M0 600C240 480 360 660 600 520S1040 260 1600 360V900H0Z" fill="#dbe9e5"/>
+  <circle cx="1130" cy="300" r="240" fill="#bde7e2" opacity=".55"/>
+  <circle cx="1260" cy="420" r="170" fill="#d9edca" opacity=".5"/>
+  <g fill="none" stroke="#6aa7a5" stroke-opacity=".45">
+    <path d="M400 300c150-80 300-80 450 0s300 80 450 0"/>
+    <path d="M380 380c170-80 340-80 510 0s340 80 510 0"/>
+    <path d="M460 460c140-64 280-64 420 0s280 64 420 0"/>
+  </g>
+</svg>
